@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.carousel {
+    background-color: rgb(255, 157, 157);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.frame {
+    border: 2px solid red;
+    width: calc(60vw + 20px);
+    height: max-content;
+    overflow: hidden;
+    cursor: grab;
+}
+
+.track {
+    width: max-content;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    position: relative;
+    left: 0px;
+}
+
+.slide {
+    width: 20vw;
+    height: 13vw;
+    background-color: #fff;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 50px;
+    color: #fff;
+}
