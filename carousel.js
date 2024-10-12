@@ -14,6 +14,7 @@
     }
 
     function touchMove(event) {
+        event.preventDefault();
         const currentX = event.touches[0].clientX;
         offset = currentX - initX;
         trackElement.style.left = currentLeft + offset + 'px'; 
