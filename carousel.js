@@ -12,12 +12,22 @@
     function touchStart(event) {
         console.log('start');
         initX = event.touches[0].clientX;
+        const initY =  event.touches[0].clientY;
+        console.log(initY)
         setTimeout(() => {
             trackElement.addEventListener('touchmove', (event) => {
-                const clientX = event.touches[0].clientX;
-                if(Math.abs(clientX - initX) > 5) carouselScroll = true
+                const offsetY = event.touches[0].clientY - initY;
+                const offsetX = event.touches[0].clientX - initX;
+                const corner = Math.atan(Math.abs(offsetY)/Math.abs(offsetX)) * 180 / Math.PI;
+                console.log('y: ' + offsetY)
+                console.log('x: ' + offsetX)
+                console.log(corner)
+                if( corner < 80 ) {
+                    event.preventDefault()
+                    carouselScroll = true;
+                }
             }, { once: true })
-        }, 10)
+        }, 0)
     }
 
     function touchMove(event) {
